@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chola Partner Connect</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Primary navigation">
+        <a class="brand" href="#home" data-nav="home" aria-label="Chola Partner Connect home">
+          <span class="brand-mark" aria-hidden="true">CP</span>
+          <span>
+            <strong>Chola</strong>
+            <small>Partner Connect</small>
+          </span>
+        </a>
+
+        <nav class="nav-list">
+          <a class="nav-link active" href="#home" data-nav="home">
+            <span data-icon="home"></span>
+            Home
+          </a>
+          <a class="nav-link" href="#leads" data-nav="leads">
+            <span data-icon="list"></span>
+            Leads
+          </a>
+          <a class="nav-link" href="#add-lead" data-nav="add-lead">
+            <span data-icon="plus"></span>
+            Add New Lead
+          </a>
+          <a class="nav-link" href="#performance" data-nav="performance">
+            <span data-icon="chart"></span>
+            My Performance
+          </a>
+          <a class="nav-link" href="#rewards" data-nav="rewards">
+            <span data-icon="award"></span>
+            Targets and Rewards
+          </a>
+          <a class="nav-link" href="#dsa360" data-nav="dsa360">
+            <span data-icon="user"></span>
+            DSA 360
+          </a>
+          <a class="nav-link" href="#payouts" data-nav="payouts">
+            <span data-icon="wallet"></span>
+            Payouts
+          </a>
+          <a class="nav-link" href="#support" data-nav="support">
+            <span data-icon="help"></span>
+            Support
+          </a>
+          <a class="nav-link admin-only" href="#campaign-admin" data-nav="campaign-admin" hidden>
+            <span data-icon="settings"></span>
+            Campaign Admin
+          </a>
+        </nav>
+
+        <div class="sidebar-status">
+          <span class="status-dot"></span>
+          <div>
+            <strong>Secure session</strong>
+            <small>Access controlled</small>
+          </div>
+        </div>
+      </aside>
+
+      <div class="workspace">
+        <header class="topbar">
+          <button class="icon-button menu-button" type="button" aria-label="Open navigation" id="menuButton">
+            <span data-icon="menu"></span>
+          </button>
+
+          <div class="search-control" role="search">
+            <span data-icon="search"></span>
+            <input type="search" placeholder="Search leads, DSAs, campaigns" aria-label="Search portal" />
+          </div>
+
+          <div class="topbar-actions">
+            <select id="personaSelect" aria-label="Switch sample portal user">
+              <option value="anika">Anika Rao, DSA</option>
+              <option value="ramesh">Ramesh Iyer, Partner Manager</option>
+              <option value="nisha">Nisha Menon, Relationship Manager</option>
+              <option value="priya">Priya Shah, Super Admin</option>
+            </select>
+            <button class="icon-button" type="button" aria-label="Notifications">
+              <span data-icon="bell"></span>
+              <span class="notification-dot"></span>
+            </button>
+            <div class="avatar" id="userInitials" aria-label="Current user initials">AR</div>
+          </div>
+        </header>
+
+        <main class="page-scroll">
+          <section class="view active" id="home" aria-labelledby="homeTitle">
+            <div class="page-heading">
+              <div>
+                <p class="eyebrow" id="roleLabel">DSA dashboard</p>
+                <h1 id="homeTitle">Good morning, Anika</h1>
+                <p id="userMeta">DSA code DSA-2048 - Silver tier - Chennai Central</p>
+              </div>
+              <div class="filter-row" aria-label="Dashboard filters">
+                <button class="chip active" type="button">This month</button>
+                <button class="chip" type="button">Configured product A</button>
+                <button class="chip" type="button">South zone</button>
+              </div>
+            </div>
+
+            <section class="promotion-banner" aria-labelledby="promotionTitle">
+              <div class="promotion-copy">
+                <span class="banner-kicker">Personalized sales promotion</span>
+                <h2 id="promotionTitle">Milestone Reward Booster</h2>
+                <p id="promotionMessage">
+                  Anika, milestone: Complete 10 verified applications this month. 2 verified applications to unlock the reward. Reward is processed after verification.
+                </p>
+                <div class="promotion-actions">
+                  <button class="primary-button" type="button" data-target-view="rewards">
+                    <span data-icon="award"></span>
+                    View eligibility
+                  </button>
+                  <button class="secondary-button" type="button" data-target-view="leads">
+                    <span data-icon="arrow-right"></span>
+                    Prioritize leads
+                  </button>
+                </div>
+              </div>
+              <div class="promotion-panel" aria-label="Personalized promotion details">
+                <div class="promotion-progress" aria-hidden="true">
+                  <svg viewBox="0 0 120 120" role="img" aria-label="Promotion progress">
+                    <circle class="meter-track" cx="60" cy="60" r="48"></circle>
+                    <circle class="meter-value" id="promotionMeter" cx="60" cy="60" r="48"></circle>
+                  </svg>
+                  <strong id="promotionPercent">80%</strong>
+                </div>
+                <dl class="promotion-facts">
+                  <div>
+                    <dt>Status</dt>
+                    <dd id="promotionStatus">Almost eligible</dd>
+                  </div>
+                  <div>
+                    <dt>Milestone gap</dt>
+                    <dd id="promotionGap">2 verified applications to milestone</dd>
+                  </div>
+                  <div>
+                    <dt>Reward</dt>
+                    <dd id="promotionReward">campaign reward benefit</dd>
+                  </div>
+                  <div>
+                    <dt>Campaign closes</dt>
+                    <dd id="promotionEnds">31 Jul 2026</dd>
+                  </div>
+                </dl>
+              </div>
+            </section>
+
+            <section class="kpi-grid" aria-label="Key performance indicators">
+              <article class="metric-card">
+                <span class="metric-icon success" data-icon="list"></span>
+                <p>Total leads</p>
+                <strong>148</strong>
+                <small>+12% vs previous period</small>
+              </article>
+              <article class="metric-card">
+                <span class="metric-icon warning" data-icon="alert"></span>
+                <p>Leads requiring action</p>
+                <strong>11</strong>
+                <small>4 document requests due today</small>
+              </article>
+              <article class="metric-card">
+                <span class="metric-icon info" data-icon="chart"></span>
+                <p>Conversion rate</p>
+                <strong>38%</strong>
+                <small>Target benchmark 35%</small>
+              </article>
+              <article class="metric-card">
+                <span class="metric-icon accent" data-icon="wallet"></span>
+                <p>Incentives pending</p>
+                <strong>INR 42k</strong>
+                <small>Under verification</small>
+              </article>
+            </section>
+
+            <section class="dashboard-grid">
+              <article class="work-panel funnel-panel">
+                <div class="panel-header">
+                  <div>
+                    <p class="eyebrow">Lead funnel</p>
+                    <h2>Pipeline by current status</h2>
+                  </div>
+                  <button class="icon-button" type="button" aria-label="Open funnel details">
+                    <span data-icon="expand"></span>
+                  </button>
+                </div>
+                <div class="funnel-chart" aria-label="Lead funnel chart">
+                  <div style="--width: 100%">
+                    <span>Submitted</span>
+                    <strong>84</strong>
+                  </div>
+                  <div style="--width: 76%">
+                    <span>Contacted</span>
+                    <strong>64</strong>
+                  </div>
+                  <div style="--width: 54%">
+                    <span>Documents complete</span>
+                    <strong>45</strong>
+                  </div>
+                  <div style="--width: 37%">
+                    <span>Approved</span>
+                    <strong>31</strong>
+                  </div>
+                  <div style="--width: 24%">
+                    <span>Disbursed</span>
+                    <strong>20</strong>
+                  </div>
+                </div>
+              </article>
+
+              <article class="work-panel action-panel">
+                <div class="panel-header">
+                  <div>
+                    <p class="eyebrow">Needs your attention</p>
+                    <h2>Priority actions</h2>
+                  </div>
+                  <span class="badge warning">11 open</span>
+                </div>
+                <div class="action-list" id="actionList"></div>
+              </article>
+
+              <article class="work-panel trend-panel">
+                <div class="panel-header">
+                  <div>
+                    <p class="eyebrow">Monthly trend</p>
+                    <h2>Eligible lead submissions</h2>
+                  </div>
+                  <span class="badge success">On track</span>
+                </div>
+                <div class="bar-chart" aria-label="Lead trend over six months">
+                  <span style="--value: 38%"><em>Feb</em></span>
+                  <span style="--value: 48%"><em>Mar</em></span>
+                  <span style="--value: 44%"><em>Apr</em></span>
+                  <span style="--value: 66%"><em>May</em></span>
+                  <span style="--value: 72%"><em>Jun</em></span>
+                  <span style="--value: 82%"><em>Jul</em></span>
+                </div>
+              </article>
+
+              <article class="work-panel activity-panel">
+                <div class="panel-header">
+                  <div>
+                    <p class="eyebrow">Recent activity</p>
+                    <h2>Latest updates</h2>
+                  </div>
+                </div>
+                <ol class="timeline" id="activityList"></ol>
+              </article>
+            </section>
+          </section>
+
+          <section class="view" id="leads" aria-labelledby="leadsTitle">
+            <div class="page-heading">
+              <div>
+                <p class="eyebrow">Pipeline</p>
+                <h1 id="leadsTitle">Leads</h1>
+                <p>Search, filter, and act on permitted lead records.</p>
+              </div>
+              <button class="primary-button" type="button" data-target-view="add-lead">
+                <span data-icon="plus"></span>
+                Add lead
+              </button>
+            </div>
+            <section class="toolbar" aria-label="Lead filters">
+              <input type="search" placeholder="Search reference or masked customer" aria-label="Search leads" />
+              <select aria-label="Filter by status">
+                <option>All statuses</option>
+                <option>Documents Pending</option>
+                <option>Approved</option>
+                <option>Under Assessment</option>
+              </select>
+              <select aria-label="Filter by product">
+                <option>All products</option>
+                <option>Configured product A</option>
+                <option>Configured product B</option>
+              </select>
+            </section>
+            <section class="data-table" aria-label="Lead list">
+              <div class="table-head">
+                <span>Lead reference</span>
+                <span>Customer</span>
+                <span>Status</span>
+                <span>Owner</span>
+                <span>Next action</span>
+              </div>
+              <div id="leadRows"></div>
+            </section>
+          </section>
+
+          <section class="view" id="add-lead" aria-labelledby="addLeadTitle">
+            <div class="page-heading">
+              <div>
+                <p class="eyebrow">Guided entry</p>
+                <h1 id="addLeadTitle">Add New Lead</h1>
+                <p>Customer and requirement details</p>
+              </div>
+              <span class="badge info">Step 1 of 5</span>
+            </div>
+            <section class="form-layout">
+              <article class="work-panel stepper-panel">
+                <h2>Lead steps</h2>
+                <ol class="stepper">
+                  <li class="complete">Customer information</li>
+                  <li class="active">Requirement</li>
+                  <li>Preliminary details</li>
+                  <li>Documents</li>
+                  <li>Review and submit</li>
+                </ol>
+              </article>
+              <form class="lead-form" id="leadForm">
+                <label>
+                  Customer name
+                  <input name="customerName" required placeholder="Fictional customer name" />
+                </label>
+                <label>
+                  Mobile number
+                  <input name="mobile" required inputmode="numeric" placeholder="Masked on submission" />
+                </label>
+                <label>
+                  Product category
+                  <select name="product" required>
+                    <option value="">Select configured product</option>
+                    <option>Configured product A</option>
+                    <option>Configured product B</option>
+                    <option>Configured product C</option>
+                  </select>
+                </label>
+                <label>
+                  Requested amount
+                  <input name="amount" required inputmode="decimal" placeholder="INR" />
+                </label>
+                <label class="full-span">
+                  Consent confirmation
+                  <select name="consent" required>
+                    <option value="">Select consent status</option>
+                    <option>Customer consent captured</option>
+                    <option>Consent pending</option>
+                  </select>
+                </label>
+                <div class="form-actions full-span">
+                  <button class="secondary-button" type="button">Save draft</button>
+                  <button class="primary-button" type="submit">
+                    <span data-icon="arrow-right"></span>
+                    Continue
+                  </button>
+                </div>
+              </form>
+            </section>
+          </section>
+
+          <section class="view" id="performance" aria-labelledby="performanceTitle">
+            <div class="page-heading">
+              <div>
+                <p class="eyebrow">Performance</p>
+                <h1 id="performanceTitle">My Performance</h1>
+                <p>Current month progress against configured targets.</p>
+              </div>
+            </div>
+            <section class="kpi-grid">
+              <article class="metric-card">
+                <p>Target achievement</p>
+                <strong>82%</strong>
+                <small>18% gap remaining</small>
+              </article>
+              <article class="metric-card">
+                <p>Average turnaround</p>
+                <strong>2.4 days</strong>
+                <small>0.6 days faster than benchmark</small>
+              </article>
+              <article class="metric-card">
+                <p>Document completeness</p>
+                <strong>92%</strong>
+                <small>Quality threshold met</small>
+              </article>
+            </section>
+          </section>
+
+          <section class="view" id="rewards" aria-labelledby="rewardsTitle">
+            <div class="page-heading">
+              <div>
+                <p class="eyebrow">Eligibility center</p>
+                <h1 id="rewardsTitle">Targets and Rewards</h1>
+                <p>Campaign status and next-best actions are calculated from configurable rules.</p>
+              </div>
+            </div>
+            <section class="reward-grid" id="rewardGrid"></section>
+          </section>
+
+          <section class="view" id="dsa360" aria-labelledby="dsa360Title">
+            <div class="profile-header">
+              <div class="profile-avatar" id="profileInitials">AR</div>
+              <div>
+                <p class="eyebrow">DSA 360</p>
+                <h1 id="dsa360Title">Anika Rao</h1>
+                <p id="profileMeta">DSA-2048 - Chennai Central - Silver tier</p>
+              </div>
+              <span class="badge success">Compliant</span>
+            </div>
+            <section class="tab-strip" aria-label="DSA 360 tabs">
+              <button class="tab active" type="button">Overview</button>
+              <button class="tab" type="button">Lead Performance</button>
+              <button class="tab" type="button">Targets</button>
+              <button class="tab" type="button">Payouts</button>
+              <button class="tab" type="button">Compliance</button>
+            </section>
+            <section class="dashboard-grid">
+              <article class="work-panel">
+                <h2>Performance score</h2>
+                <p class="score">86</p>
+                <p>Driven by quality submissions, verified outcomes, and SLA adherence.</p>
+              </article>
+              <article class="work-panel">
+                <h2>Important alerts</h2>
+                <div class="action-list">
+                  <div class="action-item">
+                    <span class="badge warning">Due</span>
+                    <p>One document expires in 12 days</p>
+                  </div>
+                  <div class="action-item">
+                    <span class="badge info">Training</span>
+                    <p>Product certification assigned</p>
+                  </div>
+                </div>
+              </article>
+            </section>
+          </section>
+
+          <section class="view" id="payouts" aria-labelledby="payoutsTitle">
+            <div class="page-heading">
+              <div>
+                <p class="eyebrow">Statements</p>
+                <h1 id="payoutsTitle">Payouts</h1>
+                <p>Estimated, pending, approved, and paid incentive activity.</p>
+              </div>
+            </div>
+            <section class="kpi-grid">
+              <article class="metric-card">
+                <p>Estimated earnings</p>
+                <strong>INR 68k</strong>
+                <small>Current period</small>
+              </article>
+              <article class="metric-card">
+                <p>Approved amount</p>
+                <strong>INR 26k</strong>
+                <small>Ready for payout cycle</small>
+              </article>
+              <article class="metric-card">
+                <p>On hold</p>
+                <strong>INR 8k</strong>
+                <small>Document verification pending</small>
+              </article>
+            </section>
+          </section>
+
+          <section class="view" id="support" aria-labelledby="supportTitle">
+            <div class="page-heading">
+              <div>
+                <p class="eyebrow">Help desk</p>
+                <h1 id="supportTitle">Support</h1>
+                <p>Raise and track lead, payout, login, document, and training tickets.</p>
+              </div>
+              <button class="primary-button" type="button">
+                <span data-icon="plus"></span>
+                New ticket
+              </button>
+            </div>
+            <section class="data-table">
+              <div class="table-head support-head">
+                <span>Ticket</span>
+                <span>Category</span>
+                <span>Status</span>
+                <span>Expected response</span>
+              </div>
+              <div class="table-row support-row">
+                <span>SUP-1098</span>
+                <span>Payout query</span>
+                <span><span class="badge warning">Awaiting response</span></span>
+                <span>Today, 4:00 PM</span>
+              </div>
+              <div class="table-row support-row">
+                <span>SUP-1087</span>
+                <span>Document issue</span>
+                <span><span class="badge success">Resolved</span></span>
+                <span>Completed</span>
+              </div>
+            </section>
+          </section>
+
+          <section class="view" id="campaign-admin" aria-labelledby="campaignAdminTitle">
+            <div class="page-heading">
+              <div>
+                <p class="eyebrow">Administration</p>
+                <h1 id="campaignAdminTitle">Campaign Management</h1>
+                <p>Configure audiences, rules, qualification events, approvals, and audit history.</p>
+              </div>
+              <button class="primary-button" type="button">
+                <span data-icon="plus"></span>
+                Create campaign
+              </button>
+            </div>
+            <section class="admin-grid">
+              <article class="work-panel">
+                <h2>Rule builder</h2>
+                <div class="rule-row">
+                  <span>Audience</span>
+                  <strong>Silver tier DSAs, South zone</strong>
+                </div>
+                <div class="rule-row">
+                  <span>Qualification event</span>
+                  <strong>Verified application</strong>
+                </div>
+                <div class="rule-row">
+                  <span>Maker-checker</span>
+                  <strong>Required before publish</strong>
+                </div>
+              </article>
+              <article class="work-panel">
+                <h2>Audit status</h2>
+                <p class="empty-state">No unpublished campaign changes for this prototype view.</p>
+              </article>
+            </section>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <a class="active" href="#home" data-nav="home"><span data-icon="home"></span><small>Home</small></a>
+      <a href="#leads" data-nav="leads"><span data-icon="list"></span><small>Leads</small></a>
+      <a href="#add-lead" data-nav="add-lead"><span data-icon="plus"></span><small>Add</small></a>
+      <a href="#rewards" data-nav="rewards"><span data-icon="award"></span><small>Rewards</small></a>
+      <a href="#support" data-nav="support"><span data-icon="help"></span><small>Support</small></a>
+    </nav>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="./app.js" defer></script>
+  </body>
+</html>
