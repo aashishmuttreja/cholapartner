@@ -39,6 +39,27 @@ const personas = {
       reason: "Your document-complete rate is 92% and your approval trend is above the configured benchmark."
     }
   },
+  meera: {
+    name: "Meera Nair",
+    initials: "MN",
+    role: "DSA dashboard",
+    canAdmin: false,
+    code: "DSA-3194",
+    tier: "Bronze tier",
+    branch: "Coimbatore North",
+    promotion: {
+      title: "Fast Start Reward Track",
+      status: "In progress",
+      current: 3,
+      target: 6,
+      unit: "document-complete leads",
+      milestone: "Submit 6 document-complete leads by campaign close",
+      reward: "fast-start reward benefit",
+      closesOn: "25 Jul 2026",
+      nextAction: "Complete missing income proof for CHL-2431 and CHL-2437.",
+      reason: "Your current campaign track rewards complete, low-rework lead submissions."
+    }
+  },
   ramesh: {
     name: "Ramesh Iyer",
     initials: "RI",
