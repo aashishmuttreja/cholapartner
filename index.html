@@ -5,11 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Chola Partner Connect</title>
     <link rel="stylesheet" href="./styles.css" />
+    <script
+      type="text/javascript"
+      src="https://d.oracleinfinity.io/infy/acs/common/js/1.3.53/common.js"
+      async="true"
+      defer="true"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://d.oracleinfinity.io/infy/personalization/8f18b0c3da08493b195f72e2f165b96a/production/personalization.js"
+      async="true"
+      defer="true"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://d.oracleinfinity.io/infy/acs/account/8f18b0c3da08493b195f72e2f165b96a/js/perso_tag/analytics-production/analytics.js"
+      async="true"
+      defer="true"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://d.oracleinfinity.io/infy/acs/common/js/recommender/5.0.1/recommender.js"
+      async="true"
+      defer="true"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://d.oracleinfinity.io/infy/acs/account/8f18b0c3da08493b195f72e2f165b96a/js/perso_tag/odc.js"
+    ></script>
   </head>
   <body>
     <div class="app-shell">
       <aside class="sidebar" aria-label="Primary navigation">
-        <a class="brand" href="#home" data-nav="home" aria-label="Chola Partner Connect home">
+        <a
+          class="brand"
+          href="#home"
+          data-nav="home"
+          aria-label="Chola Partner Connect home"
+        >
           <span class="brand-mark" aria-hidden="true">CP</span>
           <span>
             <strong>Chola</strong>
@@ -50,7 +83,12 @@
             <span data-icon="help"></span>
             Support
           </a>
-          <a class="nav-link admin-only" href="#campaign-admin" data-nav="campaign-admin" hidden>
+          <a
+            class="nav-link admin-only"
+            href="#campaign-admin"
+            data-nav="campaign-admin"
+            hidden
+          >
             <span data-icon="settings"></span>
             Campaign Admin
           </a>
@@ -67,28 +105,49 @@
 
       <div class="workspace">
         <header class="topbar">
-          <button class="icon-button menu-button" type="button" aria-label="Open navigation" id="menuButton">
+          <button
+            class="icon-button menu-button"
+            type="button"
+            aria-label="Open navigation"
+            id="menuButton"
+          >
             <span data-icon="menu"></span>
           </button>
 
           <div class="search-control" role="search">
             <span data-icon="search"></span>
-            <input type="search" placeholder="Search leads, DSAs, campaigns" aria-label="Search portal" />
+            <input
+              type="search"
+              placeholder="Search leads, DSAs, campaigns"
+              aria-label="Search portal"
+            />
           </div>
 
           <div class="topbar-actions">
             <select id="personaSelect" aria-label="Switch sample portal user">
               <option value="anika">Anika Rao, DSA</option>
               <option value="meera">Meera Nair, DSA</option>
+              <option value="rohan">Rohan Mehta, DSA</option>
+              <option value="karthik">Karthik Nair, DSA</option>
               <option value="ramesh">Ramesh Iyer, Partner Manager</option>
               <option value="nisha">Nisha Menon, Relationship Manager</option>
               <option value="priya">Priya Shah, Super Admin</option>
             </select>
-            <button class="icon-button" type="button" aria-label="Notifications">
+            <button
+              class="icon-button"
+              type="button"
+              aria-label="Notifications"
+            >
               <span data-icon="bell"></span>
               <span class="notification-dot"></span>
             </button>
-            <div class="avatar" id="userInitials" aria-label="Current user initials">AR</div>
+            <div
+              class="avatar"
+              id="userInitials"
+              aria-label="Current user initials"
+            >
+              AR
+            </div>
           </div>
         </header>
 
@@ -98,7 +157,9 @@
               <div>
                 <p class="eyebrow" id="roleLabel">DSA dashboard</p>
                 <h1 id="homeTitle">Good morning, Anika</h1>
-                <p id="userMeta">DSA code DSA-2048 - Silver tier - Chennai Central</p>
+                <p id="userMeta">
+                  DSA code DSA-2048 - Silver tier - Chennai Central
+                </p>
               </div>
               <div class="filter-row" aria-label="Dashboard filters">
                 <button class="chip active" type="button">This month</button>
@@ -118,24 +179,47 @@
                 <span class="banner-kicker">Personalized sales promotion</span>
                 <h2 id="promotionTitle">Milestone Reward Booster</h2>
                 <p id="promotionMessage">
-                  Anika, milestone: Complete 10 verified applications this month. 2 verified applications to unlock the reward. Reward is processed after verification.
+                  Anika, milestone: Complete 10 verified applications this
+                  month. 2 verified applications to unlock the reward. Reward is
+                  processed after verification.
                 </p>
                 <div class="promotion-actions">
-                  <button class="primary-button" type="button" data-target-view="rewards">
+                  <button
+                    class="primary-button"
+                    type="button"
+                    data-target-view="rewards"
+                  >
                     <span data-icon="award"></span>
                     View eligibility
                   </button>
-                  <button class="secondary-button" type="button" data-target-view="leads">
+                  <button
+                    class="secondary-button"
+                    type="button"
+                    data-target-view="leads"
+                  >
                     <span data-icon="arrow-right"></span>
                     Prioritize leads
                   </button>
                 </div>
               </div>
-              <div class="promotion-panel" aria-label="Personalized promotion details">
+              <div
+                class="promotion-panel"
+                aria-label="Personalized promotion details"
+              >
                 <div class="promotion-progress" aria-hidden="true">
-                  <svg viewBox="0 0 120 120" role="img" aria-label="Promotion progress">
+                  <svg
+                    viewBox="0 0 120 120"
+                    role="img"
+                    aria-label="Promotion progress"
+                  >
                     <circle class="meter-track" cx="60" cy="60" r="48"></circle>
-                    <circle class="meter-value" id="promotionMeter" cx="60" cy="60" r="48"></circle>
+                    <circle
+                      class="meter-value"
+                      id="promotionMeter"
+                      cx="60"
+                      cy="60"
+                      r="48"
+                    ></circle>
                   </svg>
                   <strong id="promotionPercent">80%</strong>
                 </div>
@@ -146,7 +230,9 @@
                   </div>
                   <div>
                     <dt>Milestone gap</dt>
-                    <dd id="promotionGap">2 verified applications to milestone</dd>
+                    <dd id="promotionGap">
+                      2 verified applications to milestone
+                    </dd>
                   </div>
                   <div>
                     <dt>Reward</dt>
@@ -158,6 +244,13 @@
                   </div>
                 </dl>
               </div>
+            </section>
+
+            <section class="offerbanner" aria-label="Pending offer">
+              <img
+                src="exec-5f671a0f-41a9-49eb-a37f-7cb3fe9d3dd5.png"
+                alt="Pending offer"
+              />
             </section>
 
             <section class="kpi-grid" aria-label="Key performance indicators">
@@ -194,7 +287,11 @@
                     <p class="eyebrow">Lead funnel</p>
                     <h2>Pipeline by current status</h2>
                   </div>
-                  <button class="icon-button" type="button" aria-label="Open funnel details">
+                  <button
+                    class="icon-button"
+                    type="button"
+                    aria-label="Open funnel details"
+                  >
                     <span data-icon="expand"></span>
                   </button>
                 </div>
@@ -270,13 +367,21 @@
                 <h1 id="leadsTitle">Leads</h1>
                 <p>Search, filter, and act on permitted lead records.</p>
               </div>
-              <button class="primary-button" type="button" data-target-view="add-lead">
+              <button
+                class="primary-button"
+                type="button"
+                data-target-view="add-lead"
+              >
                 <span data-icon="plus"></span>
                 Add lead
               </button>
             </div>
             <section class="toolbar" aria-label="Lead filters">
-              <input type="search" placeholder="Search reference or masked customer" aria-label="Search leads" />
+              <input
+                type="search"
+                placeholder="Search reference or masked customer"
+                aria-label="Search leads"
+              />
               <select aria-label="Filter by status">
                 <option>All statuses</option>
                 <option>Documents Pending</option>
@@ -324,11 +429,20 @@
               <form class="lead-form" id="leadForm">
                 <label>
                   Customer name
-                  <input name="customerName" required placeholder="Fictional customer name" />
+                  <input
+                    name="customerName"
+                    required
+                    placeholder="Fictional customer name"
+                  />
                 </label>
                 <label>
                   Mobile number
-                  <input name="mobile" required inputmode="numeric" placeholder="Masked on submission" />
+                  <input
+                    name="mobile"
+                    required
+                    inputmode="numeric"
+                    placeholder="Masked on submission"
+                  />
                 </label>
                 <label>
                   Product category
@@ -341,7 +455,12 @@
                 </label>
                 <label>
                   Requested amount
-                  <input name="amount" required inputmode="decimal" placeholder="INR" />
+                  <input
+                    name="amount"
+                    required
+                    inputmode="decimal"
+                    placeholder="INR"
+                  />
                 </label>
                 <label class="full-span">
                   Consent confirmation
@@ -352,7 +471,9 @@
                   </select>
                 </label>
                 <div class="form-actions full-span">
-                  <button class="secondary-button" type="button">Save draft</button>
+                  <button class="secondary-button" type="button">
+                    Save draft
+                  </button>
                   <button class="primary-button" type="submit">
                     <span data-icon="arrow-right"></span>
                     Continue
@@ -362,7 +483,11 @@
             </section>
           </section>
 
-          <section class="view" id="performance" aria-labelledby="performanceTitle">
+          <section
+            class="view"
+            id="performance"
+            aria-labelledby="performanceTitle"
+          >
             <div class="page-heading">
               <div>
                 <p class="eyebrow">Performance</p>
@@ -394,7 +519,10 @@
               <div>
                 <p class="eyebrow">Eligibility center</p>
                 <h1 id="rewardsTitle">Targets and Rewards</h1>
-                <p>Campaign status and next-best actions are calculated from configurable rules.</p>
+                <p>
+                  Campaign status and next-best actions are calculated from
+                  configurable rules.
+                </p>
               </div>
             </div>
             <section class="reward-grid" id="rewardGrid"></section>
@@ -421,7 +549,10 @@
               <article class="work-panel">
                 <h2>Performance score</h2>
                 <p class="score">86</p>
-                <p>Driven by quality submissions, verified outcomes, and SLA adherence.</p>
+                <p>
+                  Driven by quality submissions, verified outcomes, and SLA
+                  adherence.
+                </p>
               </article>
               <article class="work-panel">
                 <h2>Important alerts</h2>
@@ -444,7 +575,9 @@
               <div>
                 <p class="eyebrow">Statements</p>
                 <h1 id="payoutsTitle">Payouts</h1>
-                <p>Estimated, pending, approved, and paid incentive activity.</p>
+                <p>
+                  Estimated, pending, approved, and paid incentive activity.
+                </p>
               </div>
             </div>
             <section class="kpi-grid">
@@ -471,7 +604,10 @@
               <div>
                 <p class="eyebrow">Help desk</p>
                 <h1 id="supportTitle">Support</h1>
-                <p>Raise and track lead, payout, login, document, and training tickets.</p>
+                <p>
+                  Raise and track lead, payout, login, document, and training
+                  tickets.
+                </p>
               </div>
               <button class="primary-button" type="button">
                 <span data-icon="plus"></span>
@@ -488,7 +624,9 @@
               <div class="table-row support-row">
                 <span>SUP-1098</span>
                 <span>Payout query</span>
-                <span><span class="badge warning">Awaiting response</span></span>
+                <span
+                  ><span class="badge warning">Awaiting response</span></span
+                >
                 <span>Today, 4:00 PM</span>
               </div>
               <div class="table-row support-row">
@@ -500,12 +638,19 @@
             </section>
           </section>
 
-          <section class="view" id="campaign-admin" aria-labelledby="campaignAdminTitle">
+          <section
+            class="view"
+            id="campaign-admin"
+            aria-labelledby="campaignAdminTitle"
+          >
             <div class="page-heading">
               <div>
                 <p class="eyebrow">Administration</p>
                 <h1 id="campaignAdminTitle">Campaign Management</h1>
-                <p>Configure audiences, rules, qualification events, approvals, and audit history.</p>
+                <p>
+                  Configure audiences, rules, qualification events, approvals,
+                  and audit history.
+                </p>
               </div>
               <button class="primary-button" type="button">
                 <span data-icon="plus"></span>
@@ -530,7 +675,9 @@
               </article>
               <article class="work-panel">
                 <h2>Audit status</h2>
-                <p class="empty-state">No unpublished campaign changes for this prototype view.</p>
+                <p class="empty-state">
+                  No unpublished campaign changes for this prototype view.
+                </p>
               </article>
             </section>
           </section>
@@ -539,11 +686,21 @@
     </div>
 
     <nav class="mobile-nav" aria-label="Mobile navigation">
-      <a class="active" href="#home" data-nav="home"><span data-icon="home"></span><small>Home</small></a>
-      <a href="#leads" data-nav="leads"><span data-icon="list"></span><small>Leads</small></a>
-      <a href="#add-lead" data-nav="add-lead"><span data-icon="plus"></span><small>Add</small></a>
-      <a href="#rewards" data-nav="rewards"><span data-icon="award"></span><small>Rewards</small></a>
-      <a href="#support" data-nav="support"><span data-icon="help"></span><small>Support</small></a>
+      <a class="active" href="#home" data-nav="home"
+        ><span data-icon="home"></span><small>Home</small></a
+      >
+      <a href="#leads" data-nav="leads"
+        ><span data-icon="list"></span><small>Leads</small></a
+      >
+      <a href="#add-lead" data-nav="add-lead"
+        ><span data-icon="plus"></span><small>Add</small></a
+      >
+      <a href="#rewards" data-nav="rewards"
+        ><span data-icon="award"></span><small>Rewards</small></a
+      >
+      <a href="#support" data-nav="support"
+        ><span data-icon="help"></span><small>Support</small></a
+      >
     </nav>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>

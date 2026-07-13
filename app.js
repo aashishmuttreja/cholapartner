@@ -39,6 +39,28 @@ const personas = {
       reason: "Your document-complete rate is 92% and your approval trend is above the configured benchmark."
     }
   },
+  rohan: {
+    name: "Rohan Mehta",
+    initials: "RM",
+    role: "DSA dashboard",
+    canAdmin: false,
+    code: "DSA-3187",
+    tier: "Gold tier",
+    branch: "Mumbai Andheri",
+    promotion: {
+      title: "Milestone Reward Booster",
+      status: "Achieved",
+      current: 12,
+      target: 10,
+      unit: "verified applications",
+      milestone: "Completed 10 + 2 verified applications this month",
+      reward: "campaign reward benefit unlocked",
+      closesOn: "31 Jul 2026",
+      nextAction: "Maintain performance for the next campaign.",
+      reason:
+        "You exceeded the monthly application milestone by 2 verified applications."
+    }
+  },
   meera: {
     name: "Meera Nair",
     initials: "MN",
@@ -58,6 +80,28 @@ const personas = {
       closesOn: "25 Jul 2026",
       nextAction: "Complete missing income proof for CHL-2431 and CHL-2437.",
       reason: "Your current campaign track rewards complete, low-rework lead submissions."
+    }
+  },
+  karthik: {
+    name: "Karthik Nair",
+    initials: "KN",
+    role: "DSA dashboard",
+    canAdmin: false,
+    code: "DSA-5092",
+    tier: "Bronze tier",
+    branch: "Kochi MG Road",
+    promotion: {
+      title: "Milestone Reward Booster",
+      status: "Not achieved",
+      current: 5,
+      target: 10,
+      unit: "verified applications",
+      milestone: "Complete 10 verified applications this month",
+      reward: "campaign reward benefit",
+      closesOn: "31 Jul 2026",
+      nextAction: "Prioritize high-intent leads and complete pending document requests.",
+      reason:
+        "Five more verified applications are required before the campaign closes."
     }
   },
   ramesh: {
@@ -353,7 +397,8 @@ function bindEvents() {
   });
 
   document.getElementById("personaSelect").addEventListener("change", (event) => {
-    updatePromotion(personas[event.target.value]);
+    sessionStorage.setItem("selectedPersona", event.target.value);
+    window.location.reload();
   });
 
   document.getElementById("leadForm").addEventListener("submit", (event) => {
@@ -369,7 +414,9 @@ function init() {
   renderLeads();
   renderRewards();
   bindEvents();
-  updatePromotion(personas.anika);
+  const selectedPersona = sessionStorage.getItem("selectedPersona") || "anika";
+  document.getElementById("personaSelect").value = selectedPersona;
+  updatePromotion(personas[selectedPersona]);
   const hashView = location.hash.replace("#", "");
   if (hashView && document.getElementById(hashView)) {
     setActiveView(hashView);
