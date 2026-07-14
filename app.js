@@ -305,6 +305,15 @@ function updatePromotion(persona) {
   if (!persona.canAdmin && document.getElementById("campaign-admin").classList.contains("active")) {
     setActiveView("home");
   }
+
+  const prstatus = promotion.status.toLowerCase().replace(/\s+/g, "");
+  ORA.view({
+    sendSessionInfo: true,
+    data: {
+      "ora.z_eventname": "WP_CholaDSApage",
+      "ora.z_progressStatus": prstatus
+    }
+  });
 }
 
 function renderActions() {
