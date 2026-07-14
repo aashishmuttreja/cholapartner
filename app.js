@@ -305,6 +305,16 @@ function updatePromotion(persona) {
   if (!persona.canAdmin && document.getElementById("campaign-admin").classList.contains("active")) {
     setActiveView("home");
   }
+  function delete_cookie( name, path, domain ) {
+            document.cookie = name + "=" +
+                ((path) ? ";path="+path:"")+
+                ((domain)?";domain="+domain:"") +
+                ";expires=Thu, 01 Jan 1970 00:00:01 GMT";
+        }
+
+        delete_cookie("ORA_FPC", "/", ".aashishmuttreja.github.io");
+        delete_cookie("FPC", "/", ".aashishmuttreja.github.io");
+        localStorage.removeItem("ORA_COOK_STORE");
 
   const prstatus = promotion.status.toLowerCase().replace(/\s+/g, "");
   ORA.view({
