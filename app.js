@@ -100,7 +100,7 @@ const personas = {
     branch: "Kochi MG Road",
     promotion: {
       title: "Milestone Reward Booster",
-      status: "Not achieved",
+      status: "In progress",
       current: 5,
       target: 10,
       unit: "verified applications",
@@ -123,7 +123,7 @@ const personas = {
     branch: "South Zone",
     promotion: {
       title: "Team Momentum Challenge",
-      status: "Eligible",
+      status: "Achieved",
       current: 14,
       target: 14,
       unit: "verified team applications",
@@ -169,7 +169,7 @@ const personas = {
     branch: "Portal administration",
     promotion: {
       title: "Campaign Publishing Window",
-      status: "Qualified",
+      status: "Achieved",
       current: 6,
       target: 6,
       unit: "approved campaign rules",
@@ -382,7 +382,7 @@ function updatePromotion(persona) {
         "ora.z_progressStatus": prstatus,
       },
     });
-  }, 3000);
+  }, 300);
 }
 
 function renderActions() {
